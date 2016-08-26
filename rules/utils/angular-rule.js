@@ -161,7 +161,7 @@ function angularRule(ruleDefinition) {
                         return angularModuleIdentifiers.indexOf(id) !== -1;
                     });
                 });
-                if (isAngularModule) {
+                if (isAngularModule || angularChainableNames.indexOf(callee.property.name) !== -1) {
                     angularChainables.push(callExpressionNode);
                     angularComponents.push({
                         callExpression: callExpressionNode,
